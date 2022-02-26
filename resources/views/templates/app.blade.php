@@ -12,8 +12,8 @@
         <nav class="navigation">
             <a class="logo">Oburo</a>
             <ul class="menu">
-                <li><a href="{{ route('home') }}">Accueil</a><div class="decoration"></div></li>
-                <li><a href="{{ route('menu') }}">Menu</a><div class="decoration"></div></li>
+                <li><a href="{{ route('home') }}">Accueil</a><div class="{{ Route::is('home') ? 'decoration active' : 'decoration' }}"></div></li>
+                <li><a href="{{ route('menu') }}">Menu</a><div class="{{ Route::is('menu') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="#Reservation">Reservation</a><div class="decoration"></div></li>
                 <li><a href="#Contact">Contact</a><div class="decoration"></div></li>
             </ul>
