@@ -1,4 +1,6 @@
 require('./bootstrap');
+require('leaflet/dist/leaflet.js');
+
 
 let map = L.map('map').setView([3.854213494326459, 11.50114188187485], 15);
 
