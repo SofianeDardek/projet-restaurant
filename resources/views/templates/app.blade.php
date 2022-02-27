@@ -15,7 +15,7 @@
                 <li><a href="{{ route('home') }}">Accueil</a><div class="{{ Route::is('home') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="{{ route('menu') }}">Menu</a><div class="{{ Route::is('menu') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="#Reservation">Reservation</a><div class="decoration"></div></li>
-                <li><a href="#Contact">Contact</a><div class="decoration"></div></li>
+                <li><a href="{{ route('contact') }}">Contact</a><div class="{{ Route::is('contact') ? 'decoration active' : 'decoration' }}"></div></li>
             </ul>
         </nav>
         <button class="burger-menu">&#9776</button>
@@ -38,5 +38,20 @@
             </div>
         </div>
     </footer>
+    <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        let map = L.map('map').setView([3.854213494326459, 11.50114188187485], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        minZoom: 10,
+        maxZoom: 20,
+        id: 'mapbox/streets-v11',
+        accessToken: 'your.mapbox.access.token'
+    }).addTo(map);
+
+    let marker = L.marker([3.854213494326459, 11.50114188187485]).addTo(map);
+    marker.bindPopup('<b>Oburo</b>');
+    </script>
 </body>
 </html>
