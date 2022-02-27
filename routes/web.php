@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,5 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/reservation', [MenuController::class, 'index'])->name('menu');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
