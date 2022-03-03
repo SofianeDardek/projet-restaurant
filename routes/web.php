@@ -20,3 +20,4 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.post');
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
