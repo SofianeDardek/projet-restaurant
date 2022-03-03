@@ -17,8 +17,9 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->string('path');
             $table->unsignedSmallInteger('new_id');
-            $table->foreign('new_id')->references('id')->on('news');
             $table->timestamps();
+
+            $table->foreign('new_id')->references('id')->on('news');
         });
     }
 
