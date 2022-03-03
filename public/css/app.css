@@ -624,27 +624,96 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-right-color: #fff;
 	}
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
- 
+#map {
+    height: 400px;
 }
 
-header {
-    background-color: #FFFF;
-    /* border-bottom:  solid black 1px; */
-    position: fixed;
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.contact-box {
+    color: white;
+    width: auto;
+    height: auto;
+    background-color: #202124;
+}
+
+.contact-box h1 {
+    font-size: 23px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1100px;
+    background-color: #202124;
+    text-transform: uppercase;
+    padding: 25px 60px;
+}
+
+.contact-container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "name firstName"
+    "email tel"
+    "message message"
+    "submit submit";
+    max-width: 600px;
+    -moz-column-gap: 55px;
+         column-gap: 55px;
+}
+
+.contact-container input::-moz-placeholder {
+    margin-left: 125px;
+}
+
+.contact-container input:-ms-input-placeholder {
+    margin-left: 125px;
+}
+
+.contact-container input::placeholder {
+    margin-left: 125px;
+}
+
+.contact-container form input, textarea, button {
+    margin-top: 25px;
+}
+
+/* .contact-container form button {
+    width: auto;
+} */
+
+.contact-container form input {
+    height: 35px;
     width: 100%;
-    clear: right;
-    z-index: 1020;
-    padding: 0 64px;
-    
 }
 
+.contact-container form textarea {
+    width:100%;
+    grid-area: message;
+}
+
+.contact-container .tel {
+    grid-area: tel;
+}
+
+.contact-container .firs-name {
+    grid-area: firstName;
+}
+
+.contact-container .name {
+    grid-area: name;
+}
+
+.contact-container .email {
+    grid-area: email;
+}
+
+.contact-conatiner .submit {
+    grid-area: submit;
+
+}
 footer {
     border-top: 1px solid black;
     background-color: #202124;
@@ -733,6 +802,28 @@ footer .social-media {
     justify-content: center;
     align-items: center;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+ 
+}
+
+header {
+    background-color: #FFFF;
+    /* border-bottom:  solid black 1px; */
+    position: fixed;
+    width: 100%;
+    clear: right;
+    z-index: 1020;
+    padding: 0 64px;
+    
+}
+
 
 
 
@@ -1039,95 +1130,3 @@ li:hover > .decoration {
 }
 
 
-/*** Contact ***/
-
-#map {
-    height: 400px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.contact-box {
-    color: white;
-    width: auto;
-    height: auto;
-    background-color: #202124;
-}
-
-.contact-box h1 {
-    font-size: 23px;
-    text-align: center;
-}
-
-.contact-container {
-    max-width: 1100px;
-    background-color: #202124;
-    text-transform: uppercase;
-    padding: 25px 60px;
-}
-
-.contact-container form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "name firstName"
-    "email tel"
-    "message message"
-    "submit submit";
-    max-width: 600px;
-    -moz-column-gap: 55px;
-         column-gap: 55px;
-}
-
-.contact-container input::-moz-placeholder {
-    margin-left: 125px;
-}
-
-.contact-container input:-ms-input-placeholder {
-    margin-left: 125px;
-}
-
-.contact-container input::placeholder {
-    margin-left: 125px;
-}
-
-.contact-container form input, textarea, button {
-    margin-top: 25px;
-}
-
-/* .contact-container form button {
-    width: auto;
-} */
-
-.contact-container form input {
-    height: 35px;
-    width: 100%;
-}
-
-.contact-container form textarea {
-    width:100%;
-    grid-area: message;
-}
-
-.contact-container .tel {
-    grid-area: tel;
-}
-
-.contact-container .firs-name {
-    grid-area: firstName;
-}
-
-.contact-container .name {
-    grid-area: name;
-}
-
-.contact-container .email {
-    grid-area: email;
-}
-
-.contact-conatiner .submit {
-    grid-area: submit;
-
-}
