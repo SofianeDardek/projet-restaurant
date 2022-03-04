@@ -14,7 +14,7 @@
             <ul class="menu">
                 <li><a href="{{ route('home') }}">Accueil</a><div class="{{ Route::is('home') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="{{ route('menu') }}">Menu</a><div class="{{ Route::is('menu') ? 'decoration active' : 'decoration' }}"></div></li>
-                <li><a href="#Reservation">Reservation</a><div class="decoration"></div></li>
+                <li><a href="{{ route('reservation') }}">Reservation</a><div class="{{ Route::is('reservation') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="{{ route('contact') }}">Contact</a><div class="{{ Route::is('contact') ? 'decoration active' : 'decoration' }}"></div></li>
             </ul>
         </nav>
