@@ -662,6 +662,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     max-width: 600px;
     -moz-column-gap: 55px;
          column-gap: 55px;
+    row-gap: 11px;
 }
 
 .contact-container input::-moz-placeholder {
@@ -710,9 +711,21 @@ svg.leaflet-image-layer.leaflet-interactive path {
     grid-area: email;
 }
 
-.contact-conatiner .submit {
-    grid-area: submit;
 
+
+label.error {
+    color: red;
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.cta-send {
+    width: 100%;
+    background-color: red;
+    grid-area: submit;
 }
 footer {
     border-top: 1px solid black;
@@ -1052,12 +1065,40 @@ li:hover > .decoration {
 
 .home-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     row-gap: 25px;
     -moz-column-gap: 25px;
          column-gap: 25px;
-    grid-template-areas: "banner banner";
+    grid-template-areas: "banner banner banner";
+}
+
+.banner-info {
+    display: flex;
+    width: 100%;
+    grid-area: banner;
+}
+
+
+
+.info {
+    background-color: #202124;
+    grid-area: info;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+    width: 350px;
+  
+
+}
+
+.info p {
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 25px;
 }
 
 .home-banner img {
@@ -1089,10 +1130,15 @@ li:hover > .decoration {
 
 
 
-.home-banner {
-    grid-area: banner;
+ .home-banner img {
+    height: 200px;
+} 
+
+.home-banner  {
+    /* grid-area: banner; */
     width: 100%;
-}
+} 
+
 
 .news .desc {
     background-color: #202124;
@@ -1131,4 +1177,7 @@ li:hover > .decoration {
 
 }
 
+#map {
+    height: auto;
+}
 
