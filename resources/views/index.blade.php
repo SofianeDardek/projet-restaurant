@@ -2,9 +2,13 @@
 
 @section('content')
         <div class="home-grid">
+            <div class="banner-info">
                 <div class="home-banner">
-                    <img src="images/home.jpg">
+                    <img src="{{ asset('images/banner/banner.jpg') }}">
                 </div>
+
+                <div class="info"><p>Découvrez nos spécialitées traditionnel on attends plus que vous !</p></div>
+            </div>
 
                 @foreach($news as $new)
                 <div class="news">
