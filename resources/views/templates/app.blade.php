@@ -10,7 +10,7 @@
 <body>
 <header>
         <nav class="navigation">
-            <a class="logo"><img src="{{ asset('images/logo/logo.png') }}"></a>
+            <a href="{{ route('home') }}"><div class="logo"></div></a>
             <ul class="menu">
                 <li><a href="{{ route('home') }}">Accueil</a><div class="{{ Route::is('home') ? 'decoration active' : 'decoration' }}"></div></li>
                 <li><a href="{{ route('menu') }}">Menu</a><div class="{{ Route::is('menu') ? 'decoration active' : 'decoration' }}"></div></li>
