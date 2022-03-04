@@ -27,7 +27,7 @@
 
     <footer>
         <div class="footer-container">
-            <a href="Reserver" class="cta-set-aside">Réserver</a>
+            <a href="{{ route('reservation') }}" class="cta-set-aside">Réserver</a>
             <div>
                 <p class="footer-contact">Accès/Contact</p>
                 <div class="contact-underline"></div>
