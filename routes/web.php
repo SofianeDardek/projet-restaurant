@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\Admin\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.post');
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
+
+/** Admin **/
+Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('article.create');
