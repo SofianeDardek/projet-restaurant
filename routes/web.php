@@ -30,3 +30,4 @@ Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.ho
 Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/admin/article/create', [ArticleController::class, 'store'])->name('article.post');
+Route::delete('/admin/article/{article}', [ArticleController::class, 'delete'])->name('article.delete');
