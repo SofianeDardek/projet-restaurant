@@ -8,7 +8,7 @@
     <title>Administration</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Administration</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,13 +17,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+          <a class="{{ Route::is('admin.home') ? 'nav-link active' : 'nav-link' }}" aria-current="page" href="{{ route('admin.home') }}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Articles</a>
+          <a class="{{ Route::is('admin/article.*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('articles') }}">Articles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Support</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
