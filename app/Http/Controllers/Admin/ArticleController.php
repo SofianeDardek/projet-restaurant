@@ -28,8 +28,12 @@ class ArticleController extends Controller
 
     }
 
-    public function delete()
+    public function delete(News $article)
     {
+        $article->delete();
+
+
+        return redirect()->route('articles')->with('success', 'Article supprimé avec succès');
 
     }
 
@@ -41,21 +45,21 @@ class ArticleController extends Controller
             'image' => ['required']
         ]);
 
-        $articles = new News();
+        // $article = News::find(1);
+        $article = new News();
 
-        $articles->title = $request->title;
-        $articles->description = $request->description;
-        // $articles->path = $request->image;
+        $article->title = $request->title;
+        $article->description = $request->description;
+        // $article->path = $request->image;
+        $article->save();
+        $lastArticle = News::latest()->first();
 
         $image = new Image();
         $image->path = $request->image;
-        $image->new_id = 6;
-        dd($articles->id);
 
-        $image->save();
-
-        $articles->save();
+        $lastArticle->image()->save($image);
         
+        return back()->with('success', 'L\'actualié a été enregistré avec succès');
     }
 
 }
