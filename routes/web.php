@@ -31,3 +31,4 @@ Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name
 Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/admin/article/create', [ArticleController::class, 'store'])->name('article.post');
 Route::delete('/admin/article/{article}', [ArticleController::class, 'delete'])->name('article.delete');
+//de
