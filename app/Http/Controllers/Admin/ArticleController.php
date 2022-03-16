@@ -61,5 +61,20 @@ class ArticleController extends Controller
         
         return back()->with('success', 'L\'actualié a été enregistré avec succès');
     }
+    
+    public function edit(News $article)
+    {
+        $image = new Image();
+        $articleImage = $article->image->path;
+        $articleTitle = $article->title;
+        // $articleImage = $image->path[$article->id];
+        $articleDesc = $article->description;
 
+        return view('admin.article.edit', [
+            'articleTitle' => $articleTitle,
+            'articleImage' => $articleImage,
+            'articleDesc' => $articleDesc
+
+        ]);
+    }
 }

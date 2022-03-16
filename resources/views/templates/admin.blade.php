@@ -20,7 +20,13 @@
           <a class="{{ Route::is('admin.home') ? 'nav-link active' : 'nav-link' }}" aria-current="page" href="{{ route('admin.home') }}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Route::is('admin/article.*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('articles') }}">Articles</a>
+          <a class="{{ Request::is('admin/article/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('articles') }}">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="{{ Route::is('admin.users') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.users') }}">Utilisateur</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('admin.logs') }}">Logs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Support</a>
