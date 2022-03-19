@@ -92,3 +92,9 @@ label.error {
     background-color: red;
     grid-area: submit;
 }
+
+@media(max-width: 800px){
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
