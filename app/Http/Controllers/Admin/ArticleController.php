@@ -23,9 +23,29 @@ class ArticleController extends Controller
         return view('admin.article.create');
     }
 
-    public function update()
+    public function update(Request $request, News $article)
     {
+        $request->validate([
+            'title' => ['required'],
+            'image' => ['required'],
+            'description' => ['required']
+        ]);
 
+        $article->title = $request->title;
+        $article->description = $request->description;
+        // $article->path = $request->image;
+        $article->save();
+        $lastArticle = News::latest()->first();
+
+        $image = new Image();
+        $image->path = $request->image;
+
+        $lastArticle->image()->save($image);
+
+    
+        $article->image()->save($image);
+
+        return back()->with('success', 'Actualité modifié avec succès');
     }
 
     public function delete(News $article)
@@ -64,17 +84,8 @@ class ArticleController extends Controller
     
     public function edit(News $article)
     {
-        $image = new Image();
-        $articleImage = $article->image->path;
-        $articleTitle = $article->title;
-        // $articleImage = $image->path[$article->id];
-        $articleDesc = $article->description;
-
         return view('admin.article.edit', [
-            'articleTitle' => $articleTitle,
-            'articleImage' => $articleImage,
-            'articleDesc' => $articleDesc
-
+            'article' => $article,
         ]);
     }
 }
