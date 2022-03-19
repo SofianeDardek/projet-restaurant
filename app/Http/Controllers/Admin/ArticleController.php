@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Image;
+use App\Models\Log;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -23,7 +24,7 @@ class ArticleController extends Controller
         return view('admin.article.create');
     }
 
-    public function update(Request $request, News $article)
+    public function update(Request $request, News $article, Log $log)
     {
         $request->validate([
             'title' => ['required'],
@@ -45,20 +46,32 @@ class ArticleController extends Controller
     
         $article->image()->save($image);
 
+        // Ajouts des logs dans la db
+        $log->user_id =  auth()->user()->id;
+        $log->action = "Modification de l'article {$article->title}";
+        $log->save();
+        
+
         return back()->with('success', 'Actualité modifié avec succès');
     }
 
-    public function delete(News $article)
+    public function delete(News $article, Log $log)
     {
         $article->delete();
+
+        // Ajouts des logs dans la db
+        $log->user_id =  auth()->user()->id;
+        $log->action = "Supression de l'article {$article->title}";
+        $log->save();
 
 
         return redirect()->route('articles')->with('success', 'Article supprimé avec succès');
 
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Log $log)
     {
+
         $validate = $request->validate([
             'title' => ['required'],
             'description' => ['required'],
@@ -78,6 +91,11 @@ class ArticleController extends Controller
         $image->path = $request->image;
 
         $lastArticle->image()->save($image);
+        
+        // Ajouts des logs dans la db
+        $log->user_id =  auth()->user()->id;
+        $log->action = "Création de l'article {$article->title}";
+        $log->save();
         
         return back()->with('success', 'L\'actualié a été enregistré avec succès');
     }
