@@ -11,9 +11,18 @@ class HomeController extends Controller
     public function index()
     {
         $info = SiteInfo::find(1);
+        
+        /* Test
+        if(auth()->check()){
+            $email = auth()->user()->email;
+        } */
+        
+
 
         return view('admin.home', [
             'info' => $info,
+       
+            
         ]);
     }
 
