@@ -19,4 +19,9 @@ class PlatController extends Controller
             'categories' => $categories
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.plat.create');
+    }
 }
