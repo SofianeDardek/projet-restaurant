@@ -6,7 +6,7 @@
     @if(Session()->has('success'))
             <div class="alert alert-success">{{ Session()->get('success') }}</div>
         @endif
-        <a class="btn btn-success" href="{{ route('article.create') }}">Ajouter un article</a>
+        <a class="btn btn-success" href="{{ route('admin.article.create') }}">Ajouter un article</a>
     </div>
     <table class="table">
     <thead>
@@ -24,7 +24,7 @@
             <td>{{ $new->title }}</td>
             <td>Otto</td>
             <td>
-                <a class="btn btn-primary">Modifier</a>
+                <a href="{{ route('admin.article.edit', ['article' => $new->id]) }}" class="btn btn-primary">Modifier</a>
                 <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDelete">Supprimer</a>
             </td>
         </tr>
@@ -41,7 +41,7 @@
               Êtes vous sûr de vouloir supprimer cette actualité?
             </div>
             <div class="modal-footer">
-              <form method="POST" action="{{ route('article.delete', ['article' => $new->id]) }}">
+              <form method="POST" action="{{ route('admin.article.delete', ['article' => $new->id]) }}">
                 @csrf
               <input type="hidden" name="_method" value="delete">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
