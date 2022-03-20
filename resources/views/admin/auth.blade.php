@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-6">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
                 <form method="POST">
                     @csrf
                     @if(Session()->has('success'))
@@ -40,7 +40,7 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-2">Entrer</button>
               </form>
 
             </div>
