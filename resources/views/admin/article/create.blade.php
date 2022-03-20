@@ -27,6 +27,7 @@
         <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         <div class="pt-3">
         <input type="submit" class="btn btn-primary" value="Valider">
+         <a href="{{ route('admin.articles') }}" class="btn btn-warning">Retour</a>
         </div>
         </div>
     </form>
