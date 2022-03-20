@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin/logs', [LogsController::class, 'index'])->name('admin.logs');
     Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('admin.article.edit');
     Route::get('/admin/plat/plats', [PlatController::class, 'index'])->name('admin.plat');
-    Route::get('/admin/plat/create', [PlatController::class, 'create'])->name('admin.logout');
+    Route::get('/admin/plat/create', [PlatController::class, 'create'])->name('admin.plat.create');
     Route::get('/admin/logout', [LogoutController::class, 'logout'])->name('admin.logout');
 
     Route::post('/admin/users/user', [UserController::class, 'store'])->name('admin.user.post');
