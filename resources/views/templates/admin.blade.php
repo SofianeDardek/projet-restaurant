@@ -15,12 +15,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav flex-grow-1">
         <li class="nav-item">
           <a class="{{ Route::is('admin.home') ? 'nav-link active' : 'nav-link' }}" aria-current="page" href="{{ route('admin.home') }}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Request::is('admin/article/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('articles') }}">Articles</a>
+          <a class="{{ Request::is('admin/article/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.articles') }}">Actualité</a>
+        </li>
+        <li class="nav-item">
+          <a class="{{ Request::is('admin/plat/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.plat') }}">Plat</a>
         </li>
         <li class="nav-item">
           <a class="{{ Route::is('admin.users') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.users') }}">Utilisateur</a>
@@ -35,6 +38,9 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
+      <div>
+      <a href="{{ route('admin.logout') }}" class="btn btn-danger">Deconnexion</a>
+      </div>
     </div>
   </div>
 </nav>
