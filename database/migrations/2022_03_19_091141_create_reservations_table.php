@@ -21,6 +21,7 @@ class CreateReservationsTable extends Migration
             $table->time('hours');
             $table->integer('person');
             $table->boolean('confirmation')->nullable();
+            $table->timestamps();
         });
     }
 

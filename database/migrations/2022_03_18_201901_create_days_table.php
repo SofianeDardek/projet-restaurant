@@ -17,6 +17,7 @@ class CreateDaysTable extends Migration
             $table->id();
             $table->string('day');
             $table->boolean('open');
+            $table->timestamps();
         });
     }
 
