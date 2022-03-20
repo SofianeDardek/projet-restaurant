@@ -9,9 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(User $user)
     {
-        return view('admin.users.user');
+        $users = $user->all();
+        return view('admin.user.users', [
+            'users' => $users
+        ]);
+    }
+
+    public function create()
+    {
+        return view('admin.user.create');
     }
 
     public function store(Request $request, User $user)
