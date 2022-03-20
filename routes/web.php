@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\HomeController as HomeAdminController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\PlatController;
+use App\Http\Controllers\Admin\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +33,28 @@ Route::post('/reservation', [ReservationController::class, 'store'])->name('rese
 
 
 /** Admin **/
-Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.home');
-Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name('articles');
-Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('article.create');
-Route::get('/admin/users/user', [UserController::class, 'index'])->name('admin.users');
-Route::get('/admin/users/logs', [LogsController::class, 'index'])->name('admin.logs');
-Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
-Route::get('/admin', [AuthController::class, 'index'])->name('admin.auth');
-Route::post('/admin/users/user', [UserController::class, 'store'])->name('admin.users');
-Route::post('/admin/article/create', [ArticleController::class, 'store'])->name('article.post');
-Route::delete('/admin/article/{article}', [ArticleController::class, 'delete'])->name('article.delete');
-Route::put('/admin/article/{article}/edit', [ArticleController::class, 'update'])->name('article.update');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.home');
+    Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name('admin.articles');
+    Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('admin.article.create');
+    Route::get('/admin/user/create', [UserController::class, 'create'])->name('admin.user.create');
+    Route::get('/admin/user', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/admin/logs', [LogsController::class, 'index'])->name('admin.logs');
+    Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('admin.article.edit');
+    Route::get('/admin/plat/plats', [PlatController::class, 'index'])->name('admin.plat');
+    Route::get('/admin/plat/create', [PlatController::class, 'create'])->name('admin.logout');
+    Route::get('/admin/logout', [LogoutController::class, 'logout'])->name('admin.logout');
+
+    Route::post('/admin/users/user', [UserController::class, 'store'])->name('admin.user.post');
+    Route::post('/admin/article/create', [ArticleController::class, 'store'])->name('article.post');
+    
+
+    Route::delete('/admin/article/{article}', [ArticleController::class, 'delete'])->name('admin.article.delete');
+
+    Route::put('/admin/article/{article}/edit', [ArticleController::class, 'update'])->name('admin.article.update');
+});
+
+
+Route::get('/admin', [AuthController::class, 'login'])->name('admin.login');
+Route:: post('/admin', [AuthController::class, 'auth'])->name('admin.auth');
+
