@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\HomeController as HomeAdminController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\PlatController;
 use App\Http\Controllers\Admin\LogoutController;
+use App\Http\Controllers\Admin\DayController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,7 @@ Route::post('/reservation', [ReservationController::class, 'store'])->name('rese
 
 
 /** Admin **/
-Route::middleware(['auth'])->group(function(){
+// Route::middleware(['auth'])->group(function(){
     Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/article/articles', [ArticleController::class, 'index'])->name('admin.articles');
     Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('admin.article.create');
@@ -44,15 +45,25 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin/plat/plats', [PlatController::class, 'index'])->name('admin.plat');
     Route::get('/admin/plat/create', [PlatController::class, 'create'])->name('admin.plat.create');
     Route::get('/admin/logout', [LogoutController::class, 'logout'])->name('admin.logout');
+    Route::get('/admin/day/days', [DayController::class, 'index'])->name('admin.days');
+    Route::get('/admin/day/create', [DayController::class, 'create'])->name('admin.day.create');
+    Route::get('/admin/day/{day}/day', [DayController::class, 'edit'])->name('admin.day.edit');
 
-    Route::post('/admin/users/user', [UserController::class, 'store'])->name('admin.user.post');
+    Route::post('/admin/user/create', [UserController::class, 'store'])->name('admin.user.post');
     Route::post('/admin/article/create', [ArticleController::class, 'store'])->name('article.post');
+    Route::post('/admin/plat/create', [PlatController::class, 'store'])->name('admin.plat.post');
+    Route::post('/admin/day/create', [DayController::class, 'store'])->name('admin.day.create');
+
     
 
     Route::delete('/admin/article/{article}', [ArticleController::class, 'delete'])->name('admin.article.delete');
+    Route::delete('/admin/day/{day}', [DayController::class, 'delete'])->name('admin.day.delete');
+    Route::delete('/admin/plat/{plat}', [PlatController::class, 'delete'])->name('admin.plat.delete');
 
     Route::put('/admin/article/{article}/edit', [ArticleController::class, 'update'])->name('admin.article.update');
-});
+    // Route::put('/admin/day/{day}/edit', [DayController::class, 'update'])->name('admin.day.update');
+
+// });
 
 
 Route::get('/admin', [AuthController::class, 'login'])->name('admin.login');
