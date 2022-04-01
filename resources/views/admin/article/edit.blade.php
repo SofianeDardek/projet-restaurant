@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container pt-3">
-    <form method="POST" action="{{ route('article.update', $article->id) }} ">
+    <form method="POST" action="{{ route('admin.article.update', $article->id) }} ">
                                 
         @csrf
         <input type="hidden" name="_method" value="put">

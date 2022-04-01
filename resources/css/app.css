@@ -2,6 +2,7 @@
 @import "contact.css";
 @import "footer.css";
 @import "reservation.css";
+@import  "component.css";
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -100,7 +101,7 @@ li:hover > .decoration {
 
 
 .burger-menu {
-    margin: 5px 15px;
+    margin: -10px;
     border: none;
     background: none;
     font-size: 25px;
@@ -108,21 +109,29 @@ li:hover > .decoration {
     display: none; 
 }
 
+.toggle  {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right:155px;
+}
+
 @media(max-width: 700px){
-    .burger-menu {
+     .burger-menu {
         display: block;
         position: absolute;
+        font-size: 45px;
         top:0;
         right:0;
-    }
+    } 
 
-    .navigation .logo {
+    /* .navigation .logo {
         position: absolute;
         left: 15px;
         top: 15px;
     }
 
-    /* header {
+    header {
         background: #FFF;
         top: 0;
         left: 0;
@@ -157,21 +166,45 @@ li:hover > .decoration {
 }
 
 @media(max-width: 800px){
-    .navigation .menu {
+    .navigation .logo {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
 
-        opacity: 0;
-        /* flex-direction: column; */
+    /* header {
+        background: red;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: auto; 
+        padding: 0;     
+    } */
+
+    header {
+        height: 65px;
+    }
+
+
+    .navigation .menu  {
+
+        
+        flex-direction: column;
         transform: translateX(-100%);
-        transition: transform 1s;
+        /* transition: transform 1s; */
         width: 100%;
-     
+        height: 100vh;
    
-        position: relative;
-        top:50px
+        position: absolute;
+        top:0;
+        left:0;
+        background-color: green;
+    }
+    
 
-
-
-
+    .toggle {
+        display: block;
     }
 }
 
@@ -279,6 +312,7 @@ li:hover > .decoration {
     padding: 15px;
     text-transform: uppercase;
     width: 350px;
+    grid-area: info;
   
 
 }
@@ -363,6 +397,29 @@ li:hover > .decoration {
 
 }
 
+@media(max-width: 710px){
+    .info{
+        position: absolute;
+        background-color: transparent;
+        margin-top: 50px;
+        margin-left: 35px;
+   
+    } 
+
+    .info a {
+        font-size: 15px;
+        border: solid 2px white;
+        color: white;
+    }
+
+    .info p {
+        display: none;
+    }
+
+
+}
+
 #map {
     height: auto;
 }
+

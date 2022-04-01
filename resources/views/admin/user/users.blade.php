@@ -6,7 +6,7 @@
     @if(Session()->has('success'))
             <div class="alert alert-success">{{ Session()->get('success') }}</div>
         @endif
-        <a class="btn btn-success" href="{{ route('admin.user.create') }}">Ajouter un article</a>
+        <a class="btn btn-success" href="{{ route('admin.user.create') }}">Ajouter un utilisateur</a>
     </div>
     <table class="table">
     <thead>
@@ -38,7 +38,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Êtes vous sûr de vouloir supprimer cette actualité?
+              Êtes vous sûr de vouloir supprimer cette utilistaeur?
             </div>
             <div class="modal-footer">
               <form method="POST" action="">

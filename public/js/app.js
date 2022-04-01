@@ -2073,7 +2073,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   accessToken: 'your.mapbox.access.token'
 }).addTo(map);
 var marker = L.marker([3.854213494326459, 11.50114188187485]).addTo(map);
-marker.bindPopup('<b>Oburo</b>');
+marker.bindPopup('<b>Oburo</b>'); // Burger menu
+
+var bugerMenu = document.querySelector('.toggle');
+bugerMenu.addEventListener('click', function () {
+  alert('clicked');
+});
 
 /***/ }),
 

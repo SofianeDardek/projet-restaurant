@@ -16,6 +16,8 @@ class CreateDaysTable extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->id();
             $table->string('day');
+            $table->time('hour_first');
+            $table->time('hour_end');
             $table->boolean('open');
             $table->timestamps();
         });

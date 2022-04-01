@@ -1,4 +1,4 @@
-@extends('templates/admin')
+@extends('templates.admin')
 
 @section('content')
 
@@ -8,9 +8,17 @@
         @if(Session()->has('success'))
             <div class="alert alert-success">{{ Session()->get('success') }}</div>
         @endif
-        @error('title')
-         <div class="alert alert-danger">Veuillez rensigner le titre</div>
-         @enderror
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+     @foreach ($errors->all() as $error)
+         <p>{{$error}}</p>
+     @endforeach
+     </div>
+ @endif
+    
+       
+      
 
         <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Titre</label>

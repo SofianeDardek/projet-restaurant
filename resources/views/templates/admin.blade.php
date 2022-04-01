@@ -26,16 +26,16 @@
           <a class="{{ Request::is('admin/plat/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.plat') }}">Plat</a>
         </li>
         <li class="nav-item">
+          <a class="{{ Request::is('admin/categorie/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.categorie') }}">Categorie</a>
+        </li>
+        <li class="nav-item">
           <a class="{{ Route::is('admin.users') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.users') }}">Utilisateur</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('admin.logs') }}">Logs</a>
+          <a class="{{ Route::is('admin.logs') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.logs') }}">Logs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Support</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="{{ Request::is('admin/day/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.days') }}">Horraires</a>
         </li>
       </ul>
       <div>

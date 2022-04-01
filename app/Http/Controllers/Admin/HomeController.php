@@ -17,12 +17,11 @@ class HomeController extends Controller
             $email = auth()->user()->email;
         } */
         
+        
 
 
         return view('admin.home', [
             'info' => $info,
-       
-            
         ]);
     }
 
@@ -34,12 +33,6 @@ class HomeController extends Controller
             "phone" => ['required']
         ]);
 
-        // $info->update([
-        //    "email" => $request->email,
-        //    "adress" => $request->adress,
-        //    "phone" => $request->phone_number
-        // ]);
-
         $info = SiteInfo::find(1);
 
         $info->email = $request->email;
@@ -50,5 +43,6 @@ class HomeController extends Controller
 
         return back()->with('success', 'Modification enregistrée avec succès');
     }
+
 }
  

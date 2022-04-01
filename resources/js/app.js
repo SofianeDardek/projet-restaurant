@@ -14,3 +14,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 
 let marker = L.marker([3.854213494326459, 11.50114188187485]).addTo(map);
 marker.bindPopup('<b>Oburo</b>');
+
+
+// Burger menu
+
+let bugerMenu = document.querySelector('.toggle');
+bugerMenu.addEventListener('click', function(){
+    alert('clicked');
+});

@@ -5,8 +5,6 @@
 
     <div class="row mt-5">
            <div class="col-md-12">
-                <h1>Les horaires</h1>
-                        <hr>
     
                         <a class="btn btn-success" href="{{ route('admin.day.create') }}">Ajouter une horraire</a>
             

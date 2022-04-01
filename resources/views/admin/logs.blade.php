@@ -6,7 +6,7 @@
     @if(Session()->has('success'))
             <div class="alert alert-success">{{ Session()->get('success') }}</div>
         @endif
-        <a class="btn btn-success" href="{{ route('admin.user.create') }}">Ajouter un article</a>
+        
     </div>
     <table class="table">
     <thead>

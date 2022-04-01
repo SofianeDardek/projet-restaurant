@@ -34,9 +34,9 @@
                     <label for="phone" class="form-label">Mot de passe</label>
                     <input name="password" type="text" class="form-control" id="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>
-  
+        </div>
     </div>
 </div>
 @endsection('content')

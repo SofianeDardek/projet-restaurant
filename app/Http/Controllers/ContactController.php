@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\SiteInfo;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact');
+        $info = SiteInfo::find(1);
+
+        return view('contact', [
+            'info' => $info,
+        ]);
     }
 
     public function store(Request $request)

@@ -1,30 +1,25 @@
-@extends('templates/admin')
+@extends('templates.admin')
 
 @section('content')
 <div class="container">
-    <div class="pt-3">
-    @if(Session()->has('success'))
-            <div class="alert alert-success"><p>{{ Session()->get('success') }}</p></div>
-        @endif
-        <a class="btn btn-success" href="{{ route('admin.article.create') }}">Ajouter une actu</a>
-    </div>
+    
+    <a class="btn btn-success" href="{{ route('admin.categorie.create') }}">Ajouter une catégorie</a>
+   
     <table class="table">
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">Actualité</th>
-        <th scope="col">Date</th>
+        <th scope="col">Catégorie</th>
         <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-    @foreach($news as $new)
+    @foreach($categories as $cate)
         <tr>
-            <th scope="row">{{ $new->id }}</th>
-            <td>{{ $new->title }}</td>
-            <td>{{ $new->created_at }}</td>
+            <th scope="row">{{ $cate->id }}</th>
+            <td>{{ $cate->name }}</td>
             <td>
-                <a href="{{ route('admin.article.edit', ['article' => $new->id]) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ route('admin.categorie.delete', ['categorie' => $cate->id]) }}" class="btn btn-primary">Modifier</a>
                 <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDelete">Supprimer</a>
             </td>
         </tr>
@@ -38,10 +33,10 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Êtes vous sûr de vouloir supprimer cette actualité?
+              Êtes vous sûr de vouloir supprimer cette categorie?
             </div>
             <div class="modal-footer">
-              <form method="POST" action="{{ route('admin.article.delete', ['article' => $new->id]) }}">
+              <form method="POST" action="{{ route('admin.categorie.delete', ['categorie' => $cate->id]) }}">
                 @csrf
               <input type="hidden" name="_method" value="delete">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -55,6 +50,5 @@
         @endforeach
     </tbody>
     </table>
-
 </div>
-@endsection('content')
+    @endsection('content')

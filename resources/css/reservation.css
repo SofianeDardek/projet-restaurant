@@ -114,17 +114,6 @@ label.error {
     font-size: 15px;
 }
 
-.cta-send {
-    text-transform: uppercase;
-    padding: 15px 55px;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0);;
-    border: solid white 1px;
-    color: white;
-    cursor: pointer;
-    position: relative;
-}
-
 #couvert select {
     width: 100%;
     height: 35px;
@@ -163,7 +152,6 @@ label.error {
 
 .hours-box p {
     text-transform: uppercase;
-    font-size: 10px;
     color: white;
     
 }
@@ -188,6 +176,20 @@ label.error {
     text-align: center;
     border-bottom: solid 1px white;
     width: 100%;
+}
+
+.days-container .flex {
+    display: flex;
+    justify-content: center;
+}
+
+.days-container .flex p {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.days-container p.close {
+    color: red;
 }
 
 @media(max-width: 800px){

@@ -26,6 +26,7 @@ class ArticleController extends Controller
 
     public function update(Request $request, News $article, Log $log)
     {
+        $user = auth()->user()->id;
         $request->validate([
             'title' => ['required'],
             'image' => ['required'],
@@ -47,7 +48,7 @@ class ArticleController extends Controller
         $article->image()->save($image);
 
         // Ajouts des logs dans la db
-        $log->user_id =  auth()->user()->id;
+        // $log->user_id =  $user;
         $log->action = "Modification de l'article {$article->title}";
         $log->save();
         
@@ -60,12 +61,15 @@ class ArticleController extends Controller
         $article->delete();
 
         // Ajouts des logs dans la db
-        $log->user_id =  auth()->user()->id;
+        if(auth()->check()){
+            $user = auth()->user()->user;
+        }
+        $log->user_id =  $user;
         $log->action = "Supression de l'article {$article->title}";
         $log->save();
 
 
-        return redirect()->route('articles')->with('success', 'Article supprimé avec succès');
+        return redirect()->route('admin.articles')->with('success', 'Article supprimé avec succès');
 
     }
 
