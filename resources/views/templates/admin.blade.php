@@ -35,7 +35,7 @@
           <a class="{{ Route::is('admin.logs') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.logs') }}">Logs</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Request::is('admin/day/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.days') }}">Horraires</a>
+          <a class="{{ Request::is('admin/day/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.days') }}">Horaires</a>
         </li>
       </ul>
       <div>
