@@ -6,7 +6,7 @@
     <div class="row mt-5">
            <div class="col-md-12">
     
-                        <a class="btn btn-success" href="{{ route('admin.day.create') }}">Ajouter une horraire</a>
+                        <a class="btn btn-success" href="{{ route('admin.day.create') }}">Ajouter un horaire</a>
             
                 <table class="table">
                 <thead>
