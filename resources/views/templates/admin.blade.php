@@ -20,16 +20,16 @@
           <a class="{{ Route::is('admin.home') ? 'nav-link active' : 'nav-link' }}" aria-current="page" href="{{ route('admin.home') }}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Request::is('admin/article/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.articles') }}">Actualité</a>
+          <a class="{{ Request::is('admin/article/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.articles') }}">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Request::is('admin/plat/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.plat') }}">Plat</a>
+          <a class="{{ Request::is('admin/plat/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.plat') }}">Plats</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Request::is('admin/categorie/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.categorie') }}">Categorie</a>
+          <a class="{{ Request::is('admin/categorie/*') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.categorie') }}">Categories</a>
         </li>
         <li class="nav-item">
-          <a class="{{ Route::is('admin.users') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.users') }}">Utilisateur</a>
+          <a class="{{ Route::is('admin.users') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.users') }}">Utilisateurs</a>
         </li>
         <li class="nav-item">
           <a class="{{ Route::is('admin.logs') ? 'nav-link active' : 'nav-link' }}" href="{{ route('admin.logs') }}">Logs</a>
